@@ -18,18 +18,16 @@ metadata {
 		
 		attribute "carbonMonoxide", "enum"
 
-		fingerprint deviceId: "0xA1"
-		fingerprint deviceId: "0x21"
-		fingerprint deviceId: "0x20"
-		fingerprint deviceId: "0x07"
+		fingerprint mfr: "0086", prod: "0102", model: "0064" //to be changed
+
 	}
 
 
 	tiles {
 		standardTile("sensor", "device.sensor", width: 2, height: 2) {
-			state("inactive", label:'clear', icon:"st.carbonmonoxidedetector", backgroundColor:"#13d61d")
-			state("active", label:'detected', icon:"st.carbonmonoxidedetector", backgroundColor:"#dc0000")
-			state("tested", label:'tested' , icon:"st.carbonmonoxidedetector", backgroundColor:"#47beed") 
+			state("inactive", label:'clear', icon:"st.smokedetector", backgroundColor:"#13d61d")
+			state("active", label:'detected', icon:"st.smokededetector", backgroundColor:"#dc0000")
+			state("tested", label:'tested' , icon:"st.smokedetector", backgroundColor:"#47beed") 
 		}
 		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat") {
 			state "battery", label:'${currentValue}% battery', unit:""
